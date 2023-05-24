@@ -1,0 +1,24 @@
+Ques: Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.
+
+ Code:
+ class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        HashSet<Integer> set1 = new HashSet<>();
+        HashSet<Integer> set = new HashSet<Integer>();
+        for(int i=0 ; i<nums1.length ; i++){
+            set1.add(nums1[i]);
+        }
+        for(int i=0 ; i<nums2.length ; i++){
+            if(set1.contains(nums2[i])){
+                set.add(nums2[i]);
+            }
+        }
+
+        int[] result = new int[set.size()];
+        int i=0 ;
+        for(Integer ele:set){
+          result[i++] = ele;
+        }
+        return result;
+    }
+}
