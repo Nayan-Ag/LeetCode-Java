@@ -1,0 +1,37 @@
+Ques: You are given a positive integer array nums.
+
+The element sum is the sum of all the elements in nums.
+The digit sum is the sum of all the digits (not necessarily distinct) that appear in nums.
+Return the absolute difference between the element sum and digit sum of nums.
+
+Note that the absolute difference between two integers x and y is defined as |x - y|.
+
+Code:
+class Solution {
+    public int differenceOfSum(int[] nums) {
+        int sum = 0;
+        int dsum = 0;
+        int fsum = 0;
+        for(int i=0 ; i<nums.length ; i++){
+            sum = sum + nums[i];
+            if(nums[i]<10){
+                dsum = dsum + nums[i];
+            }
+            else{
+                dsum = dsum + digitsum(nums[i]);
+            }
+        }
+        if(sum - dsum < 0){
+            return (dsum - sum);
+        }
+        return (sum - dsum);
+    }
+    public int digitsum(int n){
+        int sum = 0;
+        while(n!=0){
+            sum = sum + (n%10);
+            n = n/10;
+        }
+        return sum;
+    }
+}
