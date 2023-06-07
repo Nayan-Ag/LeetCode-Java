@@ -1,0 +1,19 @@
+Ques: Given the head of a linked list, return the list after sorting it in ascending order.
+
+Code:
+class Solution {
+    public ListNode sortList(ListNode head) {
+       PriorityQueue<Integer> maxheap = new PriorityQueue<>();
+       ListNode temp = head;
+       while(temp!=null){
+           maxheap.add(temp.val);
+           temp = temp.next;
+       }
+       temp = head;
+       while(temp!=null){
+           temp.val = maxheap.poll();
+           temp = temp.next;
+       }
+       return head;
+    }
+}
