@@ -1,0 +1,30 @@
+Ques: You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
+
+Merge all the linked-lists into one sorted linked-list and return it.
+
+Code:
+class Solution {
+    public ListNode mergeKLists(ListNode[] lists) {
+        PriorityQueue<Integer> minheap = new PriorityQueue<>();
+        ListNode node = new ListNode(0);
+        
+        for (ListNode n : lists)
+            while (n!=null){
+                minheap.add(n.val);
+                n = n.next;
+            }
+
+        if(minheap.size()==0){
+            return null;
+        }
+
+        ListNode ans = node;
+        while(minheap.size()!=0){
+            ListNode ll = new ListNode(minheap.poll());
+            node.next = ll;
+            node = node.next;
+        }
+
+        return ans.next;
+    }
+}
