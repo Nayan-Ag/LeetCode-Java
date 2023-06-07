@@ -1,0 +1,26 @@
+Ques: You are given an array of strings names, and an array heights that consists of distinct positive integers. Both arrays are of length n.
+
+For each index i, names[i] and heights[i] denote the name and height of the ith person.
+
+Return names sorted in descending order by the people's heights.
+
+Code: 
+class Solution {
+    public String[] sortPeople(String[] names, int[] heights) {
+        int temp1 = 0;
+        String temp2 = "";
+        for(int i=0 ; i<names.length ;i++){
+            for(int j=0 ; j<names.length ; j++){
+                if(heights[i] > heights[j]){
+                    temp1 = heights[i];
+                    heights[i] = heights[j];
+                    heights[j] = temp1;
+                    temp2 = names[i];
+                    names[i] = names[j];
+                    names[j] = temp2; 
+                }
+            }
+        }
+        return names;
+    }
+}
