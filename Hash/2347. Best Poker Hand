@@ -1,0 +1,39 @@
+Ques: You are given an integer array ranks and a character array suits. You have 5 cards where the ith card has a rank of ranks[i] and a suit of suits[i].
+
+The following are the types of poker hands you can make from best to worst:
+
+"Flush": Five cards of the same suit.
+"Three of a Kind": Three cards of the same rank.
+"Pair": Two cards of the same rank.
+"High Card": Any single card.
+Return a string representing the best type of poker hand you can make with the given cards.
+
+Note that the return values are case-sensitive.
+
+Code:
+class Solution {
+    public String bestHand(int[] ranks, char[] suits) {
+        HashMap<Integer,Integer> set1 = new HashMap<>();
+        HashMap<Character,Integer> set2 = new HashMap<>();
+        for(int i=0 ; i<ranks.length ; i++){
+            set1.put(ranks[i] , set1.getOrDefault(ranks[i] , 0) + 1);
+            set2.put(suits[i] , set2.getOrDefault(suits[i] , 0) + 1);
+        }
+        if(set2.size()==1){
+            return "Flush";
+        }
+        int ans = 0;
+        for(Map.Entry<Integer,Integer> entry : set1.entrySet()){
+            if(entry.getValue() > ans){
+                ans = entry.getValue();
+            }
+        }
+        if(ans>=3){
+            return "Three of a Kind";
+        }
+        if(ans==2){
+            return "Pair";
+        }
+        return "High Card";
+    }
+}
