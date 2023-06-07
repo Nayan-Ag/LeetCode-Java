@@ -1,0 +1,37 @@
+Ques: You are given the head of a linked list, and an integer k.
+
+Return the head of the linked list after swapping the values of the kth node from the beginning and the kth node from the end (the list is 1-indexed).
+
+Code:
+class Solution {
+    public ListNode swapNodes(ListNode head, int k) {
+        int size = size(head);
+        int val1 = getAt(head,k-1);
+        int val2 = getAt(head,size-k);
+        ListNode temp1 = head;
+        ListNode temp2 = head;
+        for(int i=0;i<k-1;i++){
+            temp1 = temp1.next;
+        }
+        temp1.val = val2;
+        for(int i=0;i<size-k;i++){
+            temp2 = temp2.next;
+        }
+        temp2.val = val1;
+        return head;
+    }
+    public int size(ListNode head){
+        int size=0;
+        while(head!=null){
+            size++;
+            head = head.next;
+        }
+        return size;
+    }
+    public int getAt(ListNode head , int k){
+        for(int i=0; i<k ; i++){
+            head = head.next;
+        }
+        return head.val;
+    }
+}
