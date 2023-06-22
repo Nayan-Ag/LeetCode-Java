@@ -1,10 +1,11 @@
-Ques: Given a binary tree, determine if it is height-balanced.
-Input: root = [3,9,20,null,null,15,7]
-Output: true
-Input: root = [1,2,2,3,3,null,null,4,4]
-Output: false
+// Ques: Given a binary tree, determine if it is height-balanced.
 
-Code:
+// Input: root = [3,9,20,null,null,15,7]
+// Output: true
+// Input: root = [1,2,2,3,3,null,null,4,4]
+// Output: false
+
+// Code:
 class Solution {
     public boolean isBalanced(TreeNode root) {
         if(height(root)==-1) return false;
