@@ -7,7 +7,7 @@
 // Input: p = [1,2], q = [1,null,2]
 // Output: false
 
-Code:
+//Code:
 class Solution {
     boolean ans = true;
     public boolean isSameTree(TreeNode p, TreeNode q) {
