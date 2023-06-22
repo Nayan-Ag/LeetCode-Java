@@ -1,9 +1,9 @@
-Ques: Given the root of a binary tree, return the preorder traversal of its nodes' values.
+// Ques: Given the root of a binary tree, return the preorder traversal of its nodes' values.
 
-Input: root = [1,null,2,3]
-Output: [1,2,3]
+// Input: root = [1,null,2,3]
+// Output: [1,2,3]
 
-Code:
+// Code:
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
