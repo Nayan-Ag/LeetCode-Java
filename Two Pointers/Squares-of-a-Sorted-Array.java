@@ -1,6 +1,6 @@
-Ques: Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
+// Ques: Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
 
-Code: 
+// Code: 
 class Solution {
     public int[] sortedSquares(int[] nums) {
     int j = nums.length - 1;
