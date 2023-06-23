@@ -1,8 +1,8 @@
-Ques: Given an integer array nums, move all the even integers at the beginning of the array followed by all the odd integers.
+// Ques: Given an integer array nums, move all the even integers at the beginning of the array followed by all the odd integers.
 
-Return any array that satisfies this condition.
+// Return any array that satisfies this condition.
 
-Code:
+// Code:
 class Solution {
     public int[] sortArrayByParity(int[] nums) {
         int i=0 ; 
