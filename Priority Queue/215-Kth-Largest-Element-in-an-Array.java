@@ -1,10 +1,10 @@
-Ques: Given an integer array nums and an integer k, return the kth largest element in the array.
+// Ques: Given an integer array nums and an integer k, return the kth largest element in the array.
 
-Note that it is the kth largest element in the sorted order, not the kth distinct element.
+// Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
-You must solve it in O(n) time complexity.
+// You must solve it in O(n) time complexity.
 
-Code:
+// Code:
 class Solution {
     public int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> minheap = new PriorityQueue<>();
